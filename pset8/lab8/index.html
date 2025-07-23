@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            // TODO: Add code to check answers to questions
+
+            // Run script after DOM loaded
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // when correct answer clicked, change color to green
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#feedback').innerHTML = 'Correct!';
+                });
+
+                // when incorrect answer click, change color to red
+                let incorrect = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrect.length; i++) {
+                    incorrect[i].addEventListener('click', function() {
+                        incorrect[i].style.backgroundColor = 'red';
+                        document.querySelector('#feedback').innerHTML = 'Incorrect';
+                    });
+                }
+
+                // check free response question
+                document.querySelector('#check').addEventListener('click', function() {
+                    let input = document.querySelector('input');
+                    if (input.value === 'Texas') {
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#answer').innerHTML = 'correct';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#answer').innerHTML = 'incorrect';
+                    }
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which State is a blue state (Democratic) ?</h3>
+
+                <button class='incorrect'>Alabama </button>
+                <button class='incorrect'>Montana </button>
+                <button class='incorrect'>Alaska </button>
+                <button class='incorrect'>Idaho </button>
+                <button class='correct'>Massachusetts </button>
+                <button class='incorrect'>Texas </button>
+
+                <p id='feedback'></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Which state was also a Nation? </h3>
+                <input type="text"></input>
+                <button id='check'>Check Answer</button>
+
+                <p id="answer"></p>
+            </div>
+
+        </div>
+    </body>
+</html>
+
+<!--
+Run http-server in your terminal while in your lab8 directory to start a web server
+that serves your webpage.
+
+-->
+

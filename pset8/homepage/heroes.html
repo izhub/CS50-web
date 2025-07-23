@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="styles/styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--<script src="//code.jquery.com/jquery.min.js"></script>-->
+
+        <title>My Hero Academia!</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-inverse navbar-inverse navbar-fixed-top" >
+          <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li><a href="index">Home</a></li>
+              <li><a href="schools">High Schools</a></li>
+              <li class="active"><a href="heroes">Pro Heoroes</a></li>
+              <li><a href="villans">Villans</a></li>
+            </ul> 
+            </ul>
+          </div>
+        </nav>
+
+        <div class="container" style="margin-top:100px">
+            <div class="section" >
+                <table class="redTable">
+                    <thead>
+                        <tr>
+                            <th>Heros</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="images/h1.jpg"  alt="hero1" class="responsive"/><br>
+                            <img src="images/h2.jpg"  alt="hero2" class="responsive"/></td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+</script>
