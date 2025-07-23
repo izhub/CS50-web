@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in info %}
+                <tr>
+                    <td>{{ i.symbol }}</td>
+                    <td>{{ i.shares }}</td>
+                    <td>{{ i.price | usd }}</td>
+                    <td>{{ i.transacted }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+<!--
+
+Complete the implementation of history in such a way that it displays an HTML table summarizing all of a user’s
+transactions ever, listing row by row each and every buy and every sell.
+
+For each row, make clear whether a stock was bought or sold and include the stock’s symbol, the (purchase or sale) price,
+the number of shares bought or sold, and the date and time at which the transaction occurred.
+
+You might need to alter the table you created for buy or supplement it with an additional table. Try to minimize redundancies.
+
+Symbol	Shares	Price	Transacted
+B	    5	    $53.12	2021-01-22 04:45:50
+C	    1	    $61.87	2021-01-22 04:45:57
+B	    -1	    $53.12	2021-01-22 04:47:22
+
+-->
+
